@@ -10,6 +10,10 @@
     <style>
         .brown {
             background-color: #423e37;
+            padding-left: 20px;
+        }
+        .need-center {
+            text-align: center;
         }
         .search-box {
             display: flex;
@@ -61,23 +65,55 @@
             width: 100px;
             border-width: 3px;
         }
+        @media (max-width: 760px) {
+            .col-2 {
+                display: none;
+            }
+            .col-4 {
+                width: 100vw;
+            }
+            .col-6 {
+                width: 100vw;
+            }
+        }
     </style>
 
 </head>
 <body>
-    <div class="container-fluid vh-100">
+    <div class="container-fluid vh-100 px-0">
         <div class="row vh-100">
-          <div class="col-2 nav flex-column brown">
-            <p class="text-white text-center mt-4">Welcome, Nick!</p>
-            <button type="button" class="btn btn-warning w-75 align-self-center mb-5 mt-3 text-white">COMPOSE</button>
-            <a class="nav-link text-white" href="">Inbox (1)</a>
-            <a class="nav-link text-white" href="">Tagged</a>
-            <a class="nav-link text-white" href="">Important</a>
-            <a class="nav-link text-white" href="">Sent Mail</a>
-            <a class="nav-link text-white" href="">Drafts</a>
-            <a class="nav-link text-white" href="">Trash</a>
-          </div>
-          <div class="col-4 c2">
+            <nav class="navbar navbar-dark brown d-block d-md-none">
+                <div class="container-fluid">
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                </div>
+              </nav>
+            <div class="collapse" id="navbarToggleExternalContent">
+                <div class="brown p-4">
+                    <p class="text-white mt-4">Welcome, Nick!</p>
+                    <button type="button" class="compose btn btn-warning align-self-center mb-5 mt-3 text-white">COMPOSE</button>
+                    <a class="nav-link text-white" href="">Inbox (1)</a>
+                    <a class="nav-link text-white" href="">Tagged</a>
+                    <a class="nav-link text-white" href="">Important</a>
+                    <a class="nav-link text-white" href="">Sent Mail</a>
+                    <a class="nav-link text-white" href="">Drafts</a>
+                    <a class="nav-link text-white" href="">Trash</a>
+                </div>
+            </div>
+            <div class="col-2 flex-column brown">
+                <div class="need-center">
+                    <p class="text-white text-center mt-4">Welcome, Nick!</p>
+                    <button type="button" class="btn btn-warning align-self-center w-100 mb-5 mt-3 text-white">COMPOSE</button>
+                </div>
+                <a class="nav-link text-white" href="">Inbox (1)</a>
+                <a class="nav-link text-white" href="">Tagged</a>
+                <a class="nav-link text-white" href="">Important</a>
+                <a class="nav-link text-white" href="">Sent Mail</a>
+                <a class="nav-link text-white" href="">Drafts</a>
+                <a class="nav-link text-white" href="">Trash</a>
+            </div>
+          <div class="col-4 c2 p-4">
               <div class="search-box bg-white">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
@@ -143,5 +179,7 @@
           </div>
         </div>
       </div>
+      <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
